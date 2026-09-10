@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const proyectos = [
+  {
+    year: '2026',
+    title: 'Sistema de entradas por QR',
+    desc: 'Aplicación a medida para gestión de eventos: generación y validación de entradas por QR, con asignación automática de mesas por región. Usada en producción por clientes reales.',
+    tags: ['Next.js', 'Vercel', 'Feature flags'],
+    link: '#'
+  },
+  {
+    year: '2026',
+    title: 'Nombre del proyecto 2',
+    desc: 'Descripción corta de qué resuelve el proyecto y qué decisiones técnicas tomaste.',
+    tags: ['Stack', 'Aquí'],
+    link: '#'
+  },
+  {
+    year: '2025',
+    title: 'Nombre del proyecto 3',
+    desc: 'Otro proyecto relevante de la facultad o personal.',
+    tags: ['Stack', 'Aquí'],
+    link: '#'
+  }
+];
+---
+<Layout title="Tu Nombre — Portfolio">
+  <div class="wrap">
+    <header class="hero">
+      <p class="eyebrow">&gt; estudiante de ciencias de la computación</p>
+      <h1>Tu Nombre</h1>
+      <p>Construyo software a medida, desde el problema real de un cliente hasta producción. Estos son algunos de los proyectos en los que trabajé.</p>
+      <nav class="links">
+        <a href="mailto:tu@email.com">email</a>
+        <a href="https://github.com/tu-usuario" target="_blank">github</a>
+        <a href="https://linkedin.com/in/tu-usuario" target="_blank">linkedin</a>
+      </nav>
+    </header>
+
+    <section class="block">
+      <h2>Proyectos</h2>
+      {proyectos.map((p) => (
+        <article class="project">
+          <div class="year">{p.year}</div>
+          <div>
+            <h3>{p.title}</h3>
+            <p>{p.desc}</p>
+            <div class="tags">
+              {p.tags.map((t) => <span>{t}</span>)}
+            </div>
+            <a class="project-link" href={p.link}>ver proyecto →</a>
+          </div>
+        </article>
+      ))}
+    </section>
+
+    <section class="block about">
+      <h2>Sobre mí</h2>
+      <p>Un par de líneas sobre tu recorrido: qué estudiás, en qué te especializás, y qué tipo de problemas te interesa resolver.</p>
+    </section>
+
+    <footer>
+      <p>hecho con Astro — {new Date().getFullYear()}</p>
+    </footer>
+  </div>
+</Layout>
