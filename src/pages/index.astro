@@ -25,16 +25,22 @@ const proyectos = [
   }
 ];
 ---
-<Layout title="Tu Nombre — Portfolio">
+<Layout title="Luka Chaves Felici — Portfolio">
   <div class="wrap">
     <header class="hero">
       <p class="eyebrow">&gt; estudiante de ciencias de la computación</p>
-      <h1>Tu Nombre</h1>
+      <h1>Luka Chaves Felici</h1>
       <p>Construyo software a medida, desde el problema real de un cliente hasta producción. Estos son algunos de los proyectos en los que trabajé.</p>
       <nav class="links">
-        <a href="mailto:tu@email.com">email</a>
-        <a href="https://github.com/tu-usuario" target="_blank">github</a>
-        <a href="https://linkedin.com/in/tu-usuario" target="_blank">linkedin</a>
+        <a href="#" id="mail-link">email</a>
+        <script>
+          const user = "lukacha033";
+          const domain = "gmail.com";
+          const link = document.getElementById("mail-link");
+          link.href = `mailto:${user}@${domain}`;
+        </script>
+        <a href="https://github.com/lukacha3" target="_blank">github</a>
+        <a href="https://www.linkedin.com/in/luka-chaves-felici/" target="_blank">linkedin</a>
       </nav>
     </header>
 
