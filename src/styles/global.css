@@ -79,6 +79,36 @@ a:focus-visible, button:focus-visible {
 
 .hero .links a:hover { border-color: var(--accent); }
 
+.mail-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--accent-soft);
+  padding: 0 0 2px;
+  color: inherit;
+  cursor: pointer;
+}
+.mail-btn:hover { border-color: var(--accent); }
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  padding: 10px 18px;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
 /* SECTIONS */
 section.block {
   padding: 56px 0;

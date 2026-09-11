@@ -32,13 +32,7 @@ const proyectos = [
       <h1>Luka Chaves Felici</h1>
       <p>Construyo software a medida, desde el problema real de un cliente hasta producción. Estos son algunos de los proyectos en los que trabajé.</p>
       <nav class="links">
-        <a href="#" id="mail-link">email</a>
-        <script>
-          const user = "lukacha033";
-          const domain = "gmail.com";
-          const link = document.getElementById("mail-link");
-          link.href = `mailto:${user}@${domain}`;
-        </script>
+        <button type="button" id="mail-link" class="mail-btn">email</button>
         <a href="https://github.com/lukacha3" target="_blank">github</a>
         <a href="https://www.linkedin.com/in/luka-chaves-felici/" target="_blank">linkedin</a>
       </nav>
@@ -70,4 +64,31 @@ const proyectos = [
       <p>hecho con Astro — {new Date().getFullYear()}</p>
     </footer>
   </div>
+  <div id="toast" class="toast" role="status" aria-live="polite">correo copiado al portapapeles</div>
 </Layout>
+
+<script>
+  const user = 'lukacha033';
+  const domain = 'gmail.com';
+  const email = `${user}@${domain}`;
+
+  const mailBtn = document.getElementById('mail-link');
+  const toast = document.getElementById('toast');
+  let hideTimeout;
+
+  mailBtn?.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+    } catch {
+      const temp = document.createElement('textarea');
+      temp.value = email;
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand('copy');
+      document.body.removeChild(temp);
+    }
+    toast?.classList.add('show');
+    clearTimeout(hideTimeout);
+    hideTimeout = setTimeout(() => toast?.classList.remove('show'), 2200);
+  });
+</script>
