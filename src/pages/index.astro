@@ -4,9 +4,9 @@ import Layout from '../layouts/Layout.astro';
 const proyectos = [
   {
     year: '2026',
-    title: 'Sistema de entradas por QR',
-    desc: 'Aplicación a medida para gestión de eventos: generación y validación de entradas por QR, con asignación automática de mesas por región. Usada en producción por clientes reales.',
-    tags: ['Next.js', 'Vercel', 'Feature flags'],
+    title: 'TikEntry - Sistema de entradas por QR',
+    desc: 'Aplicación web fullstack para la gestión de entradas a eventos con control de acceso mediante códigos QR. Permite a los organizadores crear, distribuir y validar entradas en tiempo real con múltiples puertas de acceso simultáneas. ',
+    tags: ['React', 'TypeScript', 'TailwindCSS', 'Node.js', 'Express', 'esbuild', 'Supabase', 'PostgreSQL', 'Nodemailer'],
     link: '#'
   },
   {
@@ -26,13 +26,52 @@ const proyectos = [
 ];
 
 const stack = [
-  { name: 'Lenguajes', items: ['Java', 'C', 'TypeScript', 'SQL', 'Bash'] },
-  { name: 'Frontend', items: ['React', 'TailwindCSS', 'HTML', 'CSS'] },
-  { name: 'Backend y APIs', items: ['Node.js', 'Express', 'APIs REST', 'esbuild', 'Nodemailer'] },
-  { name: 'Bases de datos', items: ['PostgreSQL', 'MySQL', 'Supabase'] },
-  { name: 'Herramientas y control de versiones', items: ['Git', 'GitHub', 'Apache Maven', 'Gradle', 'GitFlow'] },
-  { name: 'Sistemas', items: ['Linux', 'Bash', 'Windows'] }
+  { name: 'Lenguajes', items: [
+    { name: 'Java', iconUrl: 'https://api.iconify.design/mdi:language-java.svg?color=%23F00000', color: '#F00000' },
+    { name: 'C', slug: 'c', color: '#A8B9CC' },
+    { name: 'TypeScript', slug: 'typescript', color: '#3178C6' },
+    { name: 'SQL', iconUrl: 'https://api.iconify.design/mdi:database.svg?color=%2394A3B8', color: '#80a3d5ff' }
+  ] },
+  { name: 'Frontend', items: [
+    { name: 'React', slug: 'react', color: '#61DAFB' },
+    { name: 'TailwindCSS', slug: 'tailwindcss', color: '#06B6D4' },
+    { name: 'HTML', slug: 'html5', color: '#E34F26' },
+    { name: 'CSS', slug: 'css', color: '#1572B6' }
+  ] },
+  { name: 'Backend y APIs', items: [
+    { name: 'Node.js', slug: 'nodedotjs', color: '#339933' },
+    { name: 'Express', slug: 'express', color: '#FFFFFF' },
+    { name: 'APIs REST', iconUrl: 'https://api.iconify.design/mdi:api.svg?color=%234A7C6F', color: '#b36818ff' },
+    { name: 'esbuild', slug: 'esbuild', color: '#FFCF00' },
+    { name: 'Nodemailer', iconUrl: 'https://api.iconify.design/mdi:email-fast-outline.svg?color=%234A7C6F', color: '#21af5cff' }
+  ] },
+  { name: 'Bases de datos', items: [
+    { name: 'PostgreSQL', slug: 'postgresql', color: '#4169E1' },
+    { name: 'MySQL', slug: 'mysql', color: '#4479A1' },
+    { name: 'Supabase', slug: 'supabase', color: '#38c045ff' }
+  ] },
+  { name: 'Herramientas y control de versiones', items: [
+    { name: 'Git', slug: 'git', color: '#F05032' },
+    { name: 'GitHub', slug: 'github', color: '#FFFFFF' },
+    { name: 'Apache Maven', slug: 'apachemaven', color: '#C71A36' },
+    { name: 'Gradle', slug: 'gradle', color: '#117085ff' },
+    { name: 'GitFlow', slug: 'git', color: '#F05032' }
+  ] },
+  { name: 'Sistemas', items: [
+    { name: 'Linux', slug: 'linux', color: '#fcb424ff' },
+    { name: 'Bash', slug: 'gnubash', color: '#4EAA25' },
+    { name: 'Windows', iconUrl: 'https://api.iconify.design/simple-icons:windows.svg?color=%2300A4EF', color: '#00A4EF' },
+    { name: 'PowerShell', iconUrl: 'https://api.iconify.design/simple-icons:powershell.svg?color=%235391FE', color: '#5391FE' }
+  ] }
 ];
+
+const getStackItem = (name: string) => {
+  for (const category of stack) {
+    const item = category.items.find((i) => i.name === name);
+    if (item) return item;
+  }
+  return { name };
+};
 ---
 <Layout title="Luka Chaves Felici — Portfolio">
   <div class="wrap">
@@ -62,7 +101,30 @@ const stack = [
           <article class="stack-card">
             <h3>{category.name}</h3>
             <div class="tags">
-              {category.items.map((item) => <span>{item}</span>)}
+              {category.items.map((item) => (
+                <span 
+                  class="stack-tag" 
+                  style={item.color ? `--brand-color: ${item.color};` : null}
+                >
+                  {item.slug && !item.iconUrl && (
+                    <img 
+                      src={`https://cdn.simpleicons.org/${item.slug}/${item.color.replace('#', '')}`} 
+                      alt="" 
+                      width="14" 
+                      height="14" 
+                    />
+                  )}
+                  {item.iconUrl && (
+                    <img 
+                      src={item.iconUrl} 
+                      alt="" 
+                      width="14" 
+                      height="14" 
+                    />
+                  )}
+                  {item.name}
+                </span>
+              ))}
             </div>
           </article>
         ))}
@@ -78,7 +140,33 @@ const stack = [
             <h3>{p.title}</h3>
             <p>{p.desc}</p>
             <div class="tags">
-              {p.tags.map((t) => <span>{t}</span>)}
+              {p.tags.map((t) => {
+                const item = getStackItem(t);
+                return (
+                  <span 
+                    class="stack-tag" 
+                    style={item.color ? `--brand-color: ${item.color};` : null}
+                  >
+                    {item.slug && !item.iconUrl && (
+                      <img 
+                        src={`https://cdn.simpleicons.org/${item.slug}/${item.color.replace('#', '')}`} 
+                        alt="" 
+                        width="14" 
+                        height="14" 
+                      />
+                    )}
+                    {item.iconUrl && (
+                      <img 
+                        src={item.iconUrl} 
+                        alt="" 
+                        width="14" 
+                        height="14" 
+                      />
+                    )}
+                    {item.name}
+                  </span>
+                );
+              })}
             </div>
             <a class="project-link" href={p.link}>ver proyecto →</a>
           </div>
