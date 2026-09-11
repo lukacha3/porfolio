@@ -24,6 +24,15 @@ const proyectos = [
     link: '#'
   }
 ];
+
+const stack = [
+  { name: 'Lenguajes', items: ['Java', 'C', 'TypeScript', 'SQL', 'Bash'] },
+  { name: 'Frontend', items: ['React', 'TailwindCSS', 'HTML', 'CSS'] },
+  { name: 'Backend y APIs', items: ['Node.js', 'Express', 'APIs REST', 'esbuild', 'Nodemailer'] },
+  { name: 'Bases de datos', items: ['PostgreSQL', 'MySQL', 'Supabase'] },
+  { name: 'Herramientas y control de versiones', items: ['Git', 'GitHub', 'Apache Maven', 'Gradle', 'GitFlow'] },
+  { name: 'Sistemas', items: ['Linux', 'Bash', 'Windows'] }
+];
 ---
 <Layout title="Luka Chaves Felici — Portfolio">
   <div class="wrap">
@@ -44,6 +53,20 @@ const proyectos = [
       <p>Soy un estudiante que apunta al perfil de Full-Stack developer. Me apasiona la tecnología en todas sus formas: además del desarrollo, dedico buena parte de mi tiempo libre a explorar sistemas operativos, especialmente Linux, y a automatizar tareas con scripts de bash. Me gusta meterme a fondo en la administración de sistemas y también en el hardware — entender cómo funciona algo desde la base es parte de lo que más disfruto de esto.</p>
 
       <p>Soy detallista y proactivo: no me conformo con la primera solución que funciona, sino que busco pensar de forma iterativa y algorítmica hasta encontrar el mejor enfoque. Me capacito constantemente con cursos y nuevas tecnologías, porque siento que en este campo nunca se termina de aprender.</p>
+    </section>
+
+    <section class="block stack-section">
+      <h2>Stack</h2>
+      <div class="stack-grid">
+        {stack.map((category) => (
+          <article class="stack-card">
+            <h3>{category.name}</h3>
+            <div class="tags">
+              {category.items.map((item) => <span>{item}</span>)}
+            </div>
+          </article>
+        ))}
+      </div>
     </section>
 
     <section class="block">
