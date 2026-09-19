@@ -7,15 +7,15 @@ const proyectos = [
     title: 'TikEntry - Sistema de entradas por QR',
     desc: 'Aplicación web fullstack para la gestión de entradas a eventos con control de acceso mediante códigos QR. Permite a los organizadores crear, distribuir y validar entradas en tiempo real con múltiples puertas de acceso simultáneas. ',
     tags: ['React', 'TypeScript', 'TailwindCSS', 'Node.js', 'Express', 'esbuild', 'Supabase', 'PostgreSQL', 'Nodemailer'],
-    link: '#'
+    link: '#',
+    i18nKey: 'proyectos.tikentry'
   },
   {
     year: '2025-2026',
     title: 'SiGU — Sistema de Gestión Universitaria',
-    desc: `SiGU es una plataforma de gestión académica universitaria con roles diferenciados para estudiantes, docentes, secretaría académica y administración: inscripción a materias y exámenes, carga de notas, correlatividades, mesas de examen, anuncios por materia y gestión de usuarios.
-Nació como proyecto de la cátedra de Ingeniería de Software I y II, y después lo seguí trabajando por mi cuenta: corregí bugs reales, cerré vulnerabilidades de control de acceso, armé tests, y reorganicé la arquitectura (controladores → capa de servicios).`,
+    desc: `SiGU es una plataforma de gestión académica universitaria con roles diferenciados para estudiantes, docentes, secretaría académica y administración: inscripción a materias y exámenes, carga de notas, correlatividades, mesas de examen, anuncios por materia y gestión de usuarios.\nNació como proyecto de la cátedra de Ingeniería de Software I y II, y después lo seguí trabajando por mi cuenta: corregí bugs reales, cerré vulnerabilidades de control de acceso, armé tests, y reorganicé la arquitectura (controladores → capa de servicios).`,
     tags: ['Java', 'Spark', 'ActiveJDBC', 'MySQL'],
-    link: '#',
+    link: 'https://github.com/lukacha3/SiGU',
     gallery: [
       '/img/proyectos/sigu/sigu-1.png',
       '/img/proyectos/sigu/sigu-2.png',
@@ -24,53 +24,55 @@ Nació como proyecto de la cátedra de Ingeniería de Software I y II, y despué
       '/img/proyectos/sigu/sigu-5.png',
       '/img/proyectos/sigu/sigu-6.png',
       '/img/proyectos/sigu/sigu-7.png'
-    ]
+    ],
+    i18nKey: 'proyectos.sigu'
   },
-  /*{
-    year: '2025',
-    title: 'Nombre del proyecto 3',
-    desc: 'Otro proyecto relevante de la facultad o personal.',
-    tags: ['Stack', 'Aquí'],
-    link: '#'
-  }*/
+  {
+    year: '2026',
+    title: 'Mas proyectos en construcción',
+    desc: 'Poco a poco iré actualizando el porfolio con mas proyectos interesantes!',
+    i18nKey: 'proyectos.wip'
+    // tags: ['Stack', 'Aquí'],
+    // link: '#'
+  }
 ];
 
 const stack = [
-  { name: 'Lenguajes', items: [
+  { name: 'Lenguajes', i18nKey: 'stack.cat.lenguajes', items: [
     { name: 'Java', iconUrl: 'https://api.iconify.design/mdi:language-java.svg?color=%23F00000', color: '#F00000' },
-    { name: 'C', slug: 'c', color: '#A8B9CC' },
+    { name: 'C', slug: 'c', color: '#A8B9CC', colorLight: '#5C7A99' },
     { name: 'TypeScript', slug: 'typescript', color: '#3178C6' },
     { name: 'SQL', iconUrl: 'https://api.iconify.design/mdi:database.svg?color=%2394A3B8', color: '#80a3d5ff' }
   ] },
-  { name: 'Frontend', items: [
-    { name: 'React', slug: 'react', color: '#61DAFB' },
-    { name: 'TailwindCSS', slug: 'tailwindcss', color: '#06B6D4' },
+  { name: 'Frontend', i18nKey: 'stack.cat.frontend', items: [
+    { name: 'React', slug: 'react', color: '#61DAFB', colorLight: '#0E7FA6' },
+    { name: 'TailwindCSS', slug: 'tailwindcss', color: '#06B6D4', colorLight: '#058ea6' },
     { name: 'HTML', slug: 'html5', color: '#E34F26' },
     { name: 'CSS', slug: 'css', color: '#1572B6' }
   ] },
-  { name: 'Backend y APIs', items: [
+  { name: 'Backend y APIs', i18nKey: 'stack.cat.backend', items: [
     { name: 'Node.js', slug: 'nodedotjs', color: '#339933' },
-    { name: 'Express', slug: 'express', color: '#FFFFFF' },
+    { name: 'Express', slug: 'express', color: '#FFFFFF', colorLight: '#000000' },
     { name: 'APIs REST', iconUrl: 'https://api.iconify.design/mdi:api.svg?color=%234A7C6F', color: '#b36818ff' },
-    { name: 'esbuild', slug: 'esbuild', color: '#FFCF00' },
+    { name: 'esbuild', slug: 'esbuild', color: '#FFCF00', colorLight: '#A38400' },
     { name: 'Nodemailer', iconUrl: 'https://api.iconify.design/mdi:email-fast-outline.svg?color=%234A7C6F', color: '#21af5cff' },
-    { name: 'Spark', iconUrl: 'https://api.iconify.design/mdi:flash.svg?color=%23F7A41D', color: '#F7A41D' },
+    { name: 'Spark', iconUrl: 'https://api.iconify.design/mdi:flash.svg?color=%23F7A41D', color: '#F7A41D', colorLight: '#C78111' },
     { name: 'ActiveJDBC', iconUrl: 'https://api.iconify.design/mdi:database-sync-outline.svg?color=%234A7C6F', color: '#4A7C6F' }
   ] },
-  { name: 'Bases de datos', items: [
+  { name: 'Bases de datos', i18nKey: 'stack.cat.db', items: [
     { name: 'PostgreSQL', slug: 'postgresql', color: '#4169E1' },
     { name: 'MySQL', slug: 'mysql', color: '#4479A1' },
-    { name: 'Supabase', slug: 'supabase', color: '#38c045ff' }
+    { name: 'Supabase', slug: 'supabase', color: '#38c045ff', colorLight: '#249461' }
   ] },
-  { name: 'Herramientas y control de versiones', items: [
+  { name: 'Herramientas y control de versiones', i18nKey: 'stack.cat.tools', items: [
     { name: 'Git', slug: 'git', color: '#F05032' },
-    { name: 'GitHub', slug: 'github', color: '#FFFFFF' },
+    { name: 'GitHub', slug: 'github', color: '#FFFFFF', colorLight: '#181717' },
     { name: 'Apache Maven', slug: 'apachemaven', color: '#C71A36' },
     { name: 'Gradle', slug: 'gradle', color: '#117085ff' },
     { name: 'GitFlow', slug: 'git', color: '#F05032' }
   ] },
-  { name: 'Sistemas', items: [
-    { name: 'Linux', slug: 'linux', color: '#fcb424ff' },
+  { name: 'Sistemas', i18nKey: 'stack.cat.systems', items: [
+    { name: 'Linux', slug: 'linux', color: '#fcb424ff', colorLight: '#8A6D00' },
     { name: 'Bash', slug: 'gnubash', color: '#4EAA25' },
     { name: 'Windows', iconUrl: 'https://api.iconify.design/simple-icons:windows.svg?color=%2300A4EF', color: '#00A4EF' },
     { name: 'PowerShell', iconUrl: 'https://api.iconify.design/simple-icons:powershell.svg?color=%235391FE', color: '#5391FE' }
@@ -80,82 +82,127 @@ const stack = [
 const getStackItem = (name: string) => {
   for (const category of stack) {
     const item = category.items.find((i) => i.name === name);
-    if (item) return item;
+    if (item) {
+      const colorLight = item.colorLight || item.color;
+      let iconUrlLight = item.iconUrl;
+      let iconUrlDark = item.iconUrl;
+      let slugUrlLight = null;
+      let slugUrlDark = null;
+      
+      if (item.iconUrl) {
+        iconUrlDark = item.iconUrl;
+        iconUrlLight = item.iconUrl.replace(/color=.*?(&|$)/, `color=%23${colorLight.replace('#', '')}$1`);
+      } else if (item.slug && item.color) {
+        slugUrlDark = `https://cdn.simpleicons.org/${item.slug}/${item.color.replace('#', '')}`;
+        slugUrlLight = `https://cdn.simpleicons.org/${item.slug}/${colorLight.replace('#', '')}`;
+      }
+      return {
+        ...item,
+        colorLight,
+        iconUrlLight,
+        iconUrlDark,
+        slugUrlLight,
+        slugUrlDark
+      };
+    }
   }
   return { name };
 };
 ---
 <Layout title="Luka Chaves Felici — Portfolio">
+  <nav class="side-nav">
+    <div class="toggles-container">
+      <button id="lang-toggle" class="toggle-btn" aria-label="Cambiar idioma">EN</button>
+      <button id="theme-toggle" class="toggle-btn" aria-label="Cambiar tema">
+        <img id="theme-icon" src="https://api.iconify.design/mdi:weather-sunny.svg?color=%23e8e6e1" alt="Tema" width="20" height="20" />
+      </button>
+    </div>
+    <a href="#intro" class="nav-link" data-i18n="nav.intro">Introducción</a>
+    <a href="#stack" class="nav-link" data-i18n="nav.stack">Stack</a>
+    <a href="#proyectos" class="nav-link" data-i18n="nav.proyectos">Proyectos</a>
+    <a href="#contacto" class="nav-link" data-i18n="nav.contacto">Contacto</a>
+  </nav>
   <div class="wrap">
     <div class="hero-about-wrapper">
-      <header class="hero">
-        <p class="eyebrow">&gt; estudiante de ciencias de la computación</p>
+      <header id="intro" class="hero">
+        <p class="eyebrow" data-i18n="hero.eyebrow">&gt; estudiante de ciencias de la computación</p>
         <h1>Luka Chaves Felici</h1>
-        <p>Estudiante avanzado de Analista en Ciencias de la Computación en la Universidad Nacional de Rio Cuarto (UNRC). Formación sólida en Programación Orientada a Objetos con Java, diseño y normalización de bases de datos relacionales (SQL) y control de versiones con Git/GitHub. Experiencia en desarrollo en equipo aplicando Scrum y GitFlow. Busco incorporarme como desarrollador para aportar mis conocimientos y habilidades en software.
-        </p>
+        <p data-i18n="hero.desc">Estudiante avanzado de Analista en Ciencias de la Computación en la Universidad Nacional de Rio Cuarto (UNRC). Formación sólida en Programación Orientada a Objetos con Java, diseño y normalización de bases de datos relacionales (SQL) y control de versiones con Git/GitHub. Experiencia en desarrollo en equipo aplicando Scrum y GitFlow. Busco incorporarme como desarrollador para aportar mis conocimientos y habilidades en software.</p>
         <nav class="links">
-          <button type="button" class="mail-btn" onmouseenter="this.querySelector('img').src='https://api.iconify.design/mdi:email-outline.svg?color=%23c9a227'" onmouseleave="this.querySelector('img').src='https://api.iconify.design/mdi:email-outline.svg?color=%23e8e6e1'">
-            <img src="https://api.iconify.design/mdi:email-outline.svg?color=%23e8e6e1" alt="" width="16" height="16" />
+          <button type="button" class="mail-btn contact-link">
+            <img class="contact-icon" data-icon="mdi:email-outline" src="https://api.iconify.design/mdi:email-outline.svg?color=%23e8e6e1" alt="" width="16" height="16" />
             email
           </button>
-          <a href="https://github.com/lukacha3" target="_blank" onmouseenter="this.querySelector('img').src='https://api.iconify.design/mdi:github.svg?color=%23c9a227'" onmouseleave="this.querySelector('img').src='https://api.iconify.design/mdi:github.svg?color=%23e8e6e1'">
-            <img src="https://api.iconify.design/mdi:github.svg?color=%23e8e6e1" alt="" width="16" height="16" />
+          <a href="https://github.com/lukacha3" target="_blank" class="contact-link">
+            <img class="contact-icon" data-icon="mdi:github" src="https://api.iconify.design/mdi:github.svg?color=%23e8e6e1" alt="" width="16" height="16" />
             github
           </a>
-          <a href="https://www.linkedin.com/in/luka-chaves-felici/" target="_blank" onmouseenter="this.querySelector('img').src='https://api.iconify.design/mdi:linkedin.svg?color=%23c9a227'" onmouseleave="this.querySelector('img').src='https://api.iconify.design/mdi:linkedin.svg?color=%23e8e6e1'">
-            <img src="https://api.iconify.design/mdi:linkedin.svg?color=%23e8e6e1" alt="" width="16" height="16" />
+          <a href="https://www.linkedin.com/in/luka-chaves-felici/" target="_blank" class="contact-link">
+            <img class="contact-icon" data-icon="mdi:linkedin" src="https://api.iconify.design/mdi:linkedin.svg?color=%23e8e6e1" alt="" width="16" height="16" />
             linkedin
           </a>
         </nav>
       </header>
 
       <section class="block about">
-        <h2>Sobre mí</h2>
-        <p>Soy un estudiante que apunta al perfil de Full-Stack developer. Me apasiona la tecnología en todas sus formas: además del desarrollo, dedico buena parte de mi tiempo libre a explorar sistemas operativos, especialmente Linux, y a automatizar tareas con scripts de bash. Me gusta meterme a fondo en la administración de sistemas y también en el hardware, entender cómo funciona algo desde la base es parte de lo que más disfruto de esto.</p>
-
-        <p>Soy detallista y proactivo: no me conformo con la primera solución que funciona, sino que busco pensar de forma iterativa y algorítmica hasta encontrar el mejor enfoque. Me capacito constantemente con cursos y nuevas tecnologías, porque siento que en este campo nunca se termina de aprender.</p>
+        <h2 data-i18n="about.title">Sobre mí</h2>
+        <div data-i18n="about.desc">
+          <p>Soy un estudiante que apunta al perfil de Full-Stack developer. Me apasiona la tecnología en todas sus formas: además del desarrollo, dedico buena parte de mi tiempo libre a explorar sistemas operativos, especialmente Linux, y a automatizar tareas con scripts de bash. Me gusta meterme a fondo en la administración de sistemas y también en el hardware, entender cómo funciona algo desde la base es parte de lo que más disfruto de esto.</p>
+          <p>Soy detallista y proactivo: no me conformo con la primera solución que funciona, sino que busco pensar de forma iterativa y algorítmica hasta encontrar el mejor enfoque. Me capacito constantemente con cursos y nuevas tecnologías, porque siento que en este campo nunca se termina de aprender.</p>
+        </div>
       </section>
     </div>
 
-    <section class="block stack-section">
-      <h2>Stack</h2>
+    <section id="stack" class="block stack-section">
+      <h2 data-i18n="stack.title">Stack</h2>
       <div class="stack-grid">
         {stack.map((category) => (
           <article class="stack-card">
-            <h3>{category.name}</h3>
+            <h3 data-i18n={category.i18nKey}>{category.name}</h3>
             <div class="tags">
-              {category.items.map((item) => (
-                <span 
-                  class="stack-tag" 
-                  style={item.color ? `--brand-color: ${item.color};` : null}
-                >
-                  {item.slug && !item.iconUrl && (
-                    <img 
-                      src={`https://cdn.simpleicons.org/${item.slug}/${item.color.replace('#', '')}`} 
-                      alt="" 
-                      width="14" 
-                      height="14" 
-                    />
-                  )}
-                  {item.iconUrl && (
-                    <img 
-                      src={item.iconUrl} 
-                      alt="" 
-                      width="14" 
-                      height="14" 
-                    />
-                  )}
-                  {item.name}
-                </span>
-              ))}
+              {category.items.map((i) => {
+                const item = getStackItem(i.name);
+                return (
+                  <div 
+                    class="stack-tag"
+                    style={item.color ? `--brand-dark: ${item.color}; --brand-light: ${item.colorLight};` : null}
+                  >
+                    {item.slugUrlDark && (
+                      <img 
+                        class="stack-icon"
+                        src={item.slugUrlDark} 
+                        data-src-dark={item.slugUrlDark}
+                        data-src-light={item.slugUrlLight}
+                        alt="" 
+                        width="24" 
+                        height="24" 
+                        loading="lazy"
+                      />
+                    )}
+                    {item.iconUrlDark && (
+                      <img 
+                        class="stack-icon"
+                        src={item.iconUrlDark} 
+                        data-src-dark={item.iconUrlDark}
+                        data-src-light={item.iconUrlLight}
+                        alt="" 
+                        width="24" 
+                        height="24" 
+                        loading="lazy"
+                      />
+                    )}
+                    {item.name}
+                  </div>
+                );
+              })}
             </div>
           </article>
         ))}
       </div>
     </section>
 
-    <section class="block">
-      <h2>Proyectos</h2>
+    <section id="proyectos" class="block">
+      <h2 data-i18n="proyectos.title">Proyectos</h2>
       {proyectos.map((p) => (
         <article class="project">
           <div class="year">
@@ -170,62 +217,72 @@ const getStackItem = (name: string) => {
             )}
           </div>
           <div>
-            <h3>{p.title}</h3>
-            {p.desc.split('\n').map((line) => line.trim() ? <p>{line.trim()}</p> : null)}
-            <div class="tags">
-              {p.tags.map((t) => {
-                const item = getStackItem(t);
-                return (
-                  <span 
-                    class="stack-tag" 
-                    style={item.color ? `--brand-color: ${item.color};` : null}
-                  >
-                    {item.slug && !item.iconUrl && (
-                      <img 
-                        src={`https://cdn.simpleicons.org/${item.slug}/${item.color.replace('#', '')}`} 
-                        alt="" 
-                        width="14" 
-                        height="14" 
-                      />
-                    )}
-                    {item.iconUrl && (
-                      <img 
-                        src={item.iconUrl} 
-                        alt="" 
-                        width="14" 
-                        height="14" 
-                      />
-                    )}
-                    {item.name}
-                  </span>
-                );
-              })}
+            <h3 data-i18n={`${p.i18nKey}.title`}>{p.title}</h3>
+            <div data-i18n={`${p.i18nKey}.desc`}>
+              {p.desc.split('\n').map((line) => line.trim() ? <p>{line.trim()}</p> : null)}
             </div>
-            <a class="project-link" href={p.link}>ver proyecto →</a>
+            {p.tags && p.tags.length > 0 && (
+              <div class="tags">
+                {p.tags.map((t) => {
+                  const item = getStackItem(t);
+                  return (
+                    <span 
+                      class="stack-tag" 
+                      style={item.color ? `--brand-dark: ${item.color}; --brand-light: ${item.colorLight};` : null}
+                    >
+                      {item.slugUrlDark && (
+                        <img 
+                          class="stack-icon"
+                          src={item.slugUrlDark} 
+                          data-src-dark={item.slugUrlDark}
+                          data-src-light={item.slugUrlLight}
+                          alt="" 
+                          width="14" 
+                          height="14" 
+                        />
+                      )}
+                      {item.iconUrlDark && (
+                        <img 
+                          class="stack-icon"
+                          src={item.iconUrlDark} 
+                          data-src-dark={item.iconUrlDark}
+                          data-src-light={item.iconUrlLight}
+                          alt="" 
+                          width="14" 
+                          height="14" 
+                        />
+                      )}
+                      {item.name}
+                    </span>
+                  );
+                })}
+              </div>
+            )}
+            {p.link && <a class="project-link" href={p.link} data-i18n="proyectos.link">ver proyecto →</a>}
           </div>
         </article>
       ))}
     </section>
 
-    <footer>
-      <p>hecho por Luka Chaves Felici — {new Date().getFullYear()}</p>
+    <footer id="contacto">
       <nav class="links footer-links">
-        <button type="button" class="mail-btn" onmouseenter="this.querySelector('img').src='https://api.iconify.design/mdi:email-outline.svg?color=%23c9a227'" onmouseleave="this.querySelector('img').src='https://api.iconify.design/mdi:email-outline.svg?color=%23e8e6e1'">
-          <img src="https://api.iconify.design/mdi:email-outline.svg?color=%23e8e6e1" alt="" width="16" height="16" />
+        <button type="button" class="mail-btn contact-link">
+          <img class="contact-icon" data-icon="mdi:email-outline" src="https://api.iconify.design/mdi:email-outline.svg?color=%23e8e6e1" alt="" width="16" height="16" />
           email
         </button>
-        <a href="https://github.com/lukacha3" target="_blank" onmouseenter="this.querySelector('img').src='https://api.iconify.design/mdi:github.svg?color=%23c9a227'" onmouseleave="this.querySelector('img').src='https://api.iconify.design/mdi:github.svg?color=%23e8e6e1'">
-          <img src="https://api.iconify.design/mdi:github.svg?color=%23e8e6e1" alt="" width="16" height="16" />
+        <a href="https://github.com/lukacha3" target="_blank" class="contact-link">
+          <img class="contact-icon" data-icon="mdi:github" src="https://api.iconify.design/mdi:github.svg?color=%23e8e6e1" alt="" width="16" height="16" />
           github
         </a>
-        <a href="https://www.linkedin.com/in/luka-chaves-felici/" target="_blank" onmouseenter="this.querySelector('img').src='https://api.iconify.design/mdi:linkedin.svg?color=%23c9a227'" onmouseleave="this.querySelector('img').src='https://api.iconify.design/mdi:linkedin.svg?color=%23e8e6e1'">
-          <img src="https://api.iconify.design/mdi:linkedin.svg?color=%23e8e6e1" alt="" width="16" height="16" />
+        <a href="https://www.linkedin.com/in/luka-chaves-felici/" target="_blank" class="contact-link">
+          <img class="contact-icon" data-icon="mdi:linkedin" src="https://api.iconify.design/mdi:linkedin.svg?color=%23e8e6e1" alt="" width="16" height="16" />
           linkedin
         </a>
       </nav>
+      <p data-i18n="footer.madeby">hecho por Luka Chaves Felici — {new Date().getFullYear()}</p>
     </footer>
   </div>
-  <div id="toast" class="toast" role="status" aria-live="polite">correo copiado al portapapeles</div>
+  <div id="toast" class="toast" role="status" aria-live="polite" data-i18n="toast.copied">correo copiado al portapapeles</div>
 
   <div id="lightbox" class="lightbox" aria-modal="true" role="dialog" hidden>
     <div class="lightbox-backdrop"></div>
@@ -415,4 +472,187 @@ const getStackItem = (name: string) => {
       if (e.key === 'ArrowLeft') prevImage();
     }
   });
+
+  // THEME, I18N & SCROLL SPY LOGIC
+  const translations = {
+    es: {
+      'hero.eyebrow': '> estudiante de ciencias de la computación',
+      'hero.desc': 'Estudiante avanzado de Analista en Ciencias de la Computación en la Universidad Nacional de Rio Cuarto (UNRC). Formación sólida en Programación Orientada a Objetos con Java, diseño y normalización de bases de datos relacionales (SQL) y control de versiones con Git/GitHub. Experiencia en desarrollo en equipo aplicando Scrum y GitFlow. Busco incorporarme como desarrollador para aportar mis conocimientos y habilidades en software.',
+      'nav.intro': 'Introducción',
+      'nav.stack': 'Stack',
+      'nav.proyectos': 'Proyectos',
+      'nav.contacto': 'Contacto',
+      'about.title': 'Sobre mí',
+      'about.desc': 'Soy un estudiante que apunta al perfil de Full-Stack developer. Me apasiona la tecnología en todas sus formas: además del desarrollo, dedico buena parte de mi tiempo libre a explorar sistemas operativos, especialmente Linux, y a automatizar tareas con scripts de bash. Me gusta meterme a fondo en la administración de sistemas y también en el hardware, entender cómo funciona algo desde la base es parte de lo que más disfruto de esto.\nSoy detallista y proactivo: no me conformo con la primera solución que funciona, sino que busco pensar de forma iterativa y algorítmica hasta encontrar el mejor enfoque. Me capacito constantemente con cursos y nuevas tecnologías, porque siento que en este campo nunca se termina de aprender.',
+      'stack.title': 'Stack',
+      'stack.cat.lenguajes': 'Lenguajes',
+      'stack.cat.frontend': 'Frontend',
+      'stack.cat.backend': 'Backend y APIs',
+      'stack.cat.db': 'Bases de datos',
+      'stack.cat.tools': 'Herramientas y control de versiones',
+      'stack.cat.systems': 'Sistemas',
+      'proyectos.title': 'Proyectos',
+      'proyectos.tikentry.title': 'TikEntry - Sistema de entradas por QR',
+      'proyectos.tikentry.desc': 'Aplicación web fullstack para la gestión de entradas a eventos con control de acceso mediante códigos QR. Permite a los organizadores crear, distribuir y validar entradas en tiempo real con múltiples puertas de acceso simultáneas.',
+      'proyectos.sigu.title': 'SiGU — Sistema de Gestión Universitaria',
+      'proyectos.sigu.desc': 'SiGU es una plataforma de gestión académica universitaria con roles diferenciados para estudiantes, docentes, secretaría académica y administración: inscripción a materias y exámenes, carga de notas, correlatividades, mesas de examen, anuncios por materia y gestión de usuarios.\nNació como proyecto de la cátedra de Ingeniería de Software I y II, y después lo seguí trabajando por mi cuenta: corregí bugs reales, cerré vulnerabilidades de control de acceso, armé tests, y reorganicé la arquitectura (controladores → capa de servicios).',
+      'proyectos.wip.title': 'Mas proyectos en construcción',
+      'proyectos.wip.desc': 'Poco a poco iré actualizando el porfolio con mas proyectos interesantes!',
+      'proyectos.link': 'ver proyecto →',
+      'footer.madeby': `hecho por Luka Chaves Felici — ${new Date().getFullYear()}`,
+      'toast.copied': 'correo copiado al portapapeles'
+    },
+    en: {
+      'hero.eyebrow': '> computer science student',
+      'hero.desc': 'Advanced Computer Science student at the National University of Rio Cuarto (UNRC). Solid background in Object-Oriented Programming with Java, relational database design and normalization (SQL), and version control with Git/GitHub. Experience in team development applying Scrum and GitFlow. Looking to join a team as a developer to contribute my knowledge and software skills.',
+      'nav.intro': 'Intro',
+      'nav.stack': 'Stack',
+      'nav.proyectos': 'Projects',
+      'nav.contacto': 'Contact',
+      'about.title': 'About me',
+      'about.desc': "I'm a student aiming for a Full-Stack developer profile. I'm passionate about technology in all its forms: besides software development, I dedicate a good part of my free time to exploring operating systems, especially Linux, and automating tasks with bash scripts. I love diving deep into system administration and hardware; understanding how things work from the ground up is what I enjoy the most.\nI am detail-oriented and proactive: I don't settle for the first working solution. I always strive to think iteratively and algorithmically until I find the best approach. I constantly train myself with courses and new technologies, because I feel that in this field you never stop learning.",
+      'stack.title': 'Stack',
+      'stack.cat.lenguajes': 'Languages',
+      'stack.cat.frontend': 'Frontend',
+      'stack.cat.backend': 'Backend & APIs',
+      'stack.cat.db': 'Databases',
+      'stack.cat.tools': 'Tools & Version Control',
+      'stack.cat.systems': 'Systems',
+      'proyectos.title': 'Projects',
+      'proyectos.tikentry.title': 'TikEntry - QR Ticket System',
+      'proyectos.tikentry.desc': 'Fullstack web application for event ticket management with QR code access control. It allows organizers to create, distribute, and validate tickets in real-time across multiple simultaneous access gates.',
+      'proyectos.sigu.title': 'SiGU — University Management System',
+      'proyectos.sigu.desc': 'SiGU is a university academic management platform with distinct roles for students, professors, academic secretariat, and administration: course and exam enrollment, grade submission, prerequisites, exam boards, course announcements, and user management.\nIt started as a Software Engineering I & II project, and later I kept working on it independently: fixing real bugs, patching access control vulnerabilities, building tests, and reorganizing the architecture (controllers → services layer).',
+      'proyectos.wip.title': 'More projects under construction',
+      'proyectos.wip.desc': 'I will gradually update the portfolio with more interesting projects!',
+      'proyectos.link': 'view project →',
+      'footer.madeby': `made by Luka Chaves Felici — ${new Date().getFullYear()}`,
+      'toast.copied': 'email copied to clipboard'
+    }
+  };
+
+  const themeToggle = document.getElementById('theme-toggle');
+  const langToggle = document.getElementById('lang-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+  const contactLinks = document.querySelectorAll('.contact-link');
+
+  function applyLanguage(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const text = translations[lang]?.[key];
+      if (text) {
+        if (text.includes('\n')) {
+          el.innerHTML = text.split('\n').map(l => `<p>${l.trim()}</p>`).join('');
+        } else {
+          el.textContent = text;
+        }
+      }
+    });
+    if (langToggle) {
+      langToggle.textContent = lang === 'es' ? 'EN' : 'ES';
+    }
+    localStorage.setItem('lang', lang);
+  }
+
+  const savedLang = localStorage.getItem('lang') || 'es';
+  if (savedLang === 'en') applyLanguage('en');
+
+  langToggle?.addEventListener('click', () => {
+    const activeLang = localStorage.getItem('lang') || 'es';
+    const newLang = activeLang === 'es' ? 'en' : 'es';
+    applyLanguage(newLang);
+  });
+
+  function getThemeColor() {
+    return document.documentElement.getAttribute('data-theme') === 'light' ? '%231e293b' : '%23e8e6e1';
+  }
+  function getAccentColor() {
+    return document.documentElement.getAttribute('data-theme') === 'light' ? '%23b28c1d' : '%23c9a227';
+  }
+
+  function updateDynamicIcons() {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const themeColor = getThemeColor();
+    
+    document.querySelectorAll('.contact-icon').forEach(img => {
+      img.src = `https://api.iconify.design/${img.dataset.icon}.svg?color=${themeColor}`;
+    });
+    
+    document.querySelectorAll('.stack-icon').forEach(img => {
+      img.src = isLight ? img.dataset.srcLight : img.dataset.srcDark;
+    });
+
+    const favicon = document.getElementById('favicon');
+    if (favicon) {
+      favicon.href = isLight ? '/favicon-light.svg' : '/favicon.svg';
+    }
+  }
+  
+  if (themeIcon && document.documentElement.getAttribute('data-theme') === 'light') {
+    themeIcon.src = 'https://api.iconify.design/mdi:weather-night.svg?color=%231e293b';
+  }
+  updateDynamicIcons();
+
+  contactLinks.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      const img = link.querySelector('img');
+      if (img) img.src = `https://api.iconify.design/${img.dataset.icon}.svg?color=${getAccentColor()}`;
+    });
+    link.addEventListener('mouseleave', () => {
+      const img = link.querySelector('img');
+      if (img) img.src = `https://api.iconify.design/${img.dataset.icon}.svg?color=${getThemeColor()}`;
+    });
+  });
+
+  themeToggle?.addEventListener('click', () => {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    if (isLight) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'dark');
+      themeIcon.src = 'https://api.iconify.design/mdi:weather-sunny.svg?color=%23e8e6e1';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem('theme', 'light');
+      themeIcon.src = 'https://api.iconify.design/mdi:weather-night.svg?color=%231e293b';
+    }
+    updateDynamicIcons();
+  });
+
+  const sections = document.querySelectorAll('#intro, #stack, #proyectos, #contacto');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (link.getAttribute('href') === '#intro') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  });
+
+  function updateSpy() {
+    let current = 'intro';
+    const scrollY = window.scrollY;
+
+    sections.forEach(sec => {
+      const rect = sec.getBoundingClientRect();
+      // Si el top de la sección cruzó el tercio superior de la pantalla
+      if (rect.top <= window.innerHeight / 3) {
+        current = sec.getAttribute('id');
+      }
+    });
+
+    // Forzar contacto si estamos al final de la página (con margen de 50px)
+    if ((window.innerHeight + scrollY) >= document.documentElement.scrollHeight - 50) {
+      current = 'contacto';
+    }
+
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+    });
+  }
+
+  window.addEventListener('scroll', updateSpy, { passive: true });
+  window.addEventListener('resize', updateSpy, { passive: true });
+  updateSpy();
 </script>
