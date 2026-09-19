@@ -10,19 +10,29 @@ const proyectos = [
     link: '#'
   },
   {
-    year: '2026',
-    title: 'Nombre del proyecto 2',
-    desc: 'Descripción corta de qué resuelve el proyecto y qué decisiones técnicas tomaste.',
-    tags: ['Stack', 'Aquí'],
-    link: '#'
+    year: '2025-2026',
+    title: 'SiGU — Sistema de Gestión Universitaria',
+    desc: `SiGU es una plataforma de gestión académica universitaria con roles diferenciados para estudiantes, docentes, secretaría académica y administración: inscripción a materias y exámenes, carga de notas, correlatividades, mesas de examen, anuncios por materia y gestión de usuarios.
+Nació como proyecto de la cátedra de Ingeniería de Software I y II, y después lo seguí trabajando por mi cuenta: corregí bugs reales, cerré vulnerabilidades de control de acceso, armé tests, y reorganicé la arquitectura (controladores → capa de servicios).`,
+    tags: ['Java', 'Spark', 'ActiveJDBC', 'MySQL'],
+    link: '#',
+    gallery: [
+      '/img/proyectos/sigu/sigu-1.png',
+      '/img/proyectos/sigu/sigu-2.png',
+      '/img/proyectos/sigu/sigu-3.png',
+      '/img/proyectos/sigu/sigu-4.png',
+      '/img/proyectos/sigu/sigu-5.png',
+      '/img/proyectos/sigu/sigu-6.png',
+      '/img/proyectos/sigu/sigu-7.png'
+    ]
   },
-  {
+  /*{
     year: '2025',
     title: 'Nombre del proyecto 3',
     desc: 'Otro proyecto relevante de la facultad o personal.',
     tags: ['Stack', 'Aquí'],
     link: '#'
-  }
+  }*/
 ];
 
 const stack = [
@@ -43,7 +53,9 @@ const stack = [
     { name: 'Express', slug: 'express', color: '#FFFFFF' },
     { name: 'APIs REST', iconUrl: 'https://api.iconify.design/mdi:api.svg?color=%234A7C6F', color: '#b36818ff' },
     { name: 'esbuild', slug: 'esbuild', color: '#FFCF00' },
-    { name: 'Nodemailer', iconUrl: 'https://api.iconify.design/mdi:email-fast-outline.svg?color=%234A7C6F', color: '#21af5cff' }
+    { name: 'Nodemailer', iconUrl: 'https://api.iconify.design/mdi:email-fast-outline.svg?color=%234A7C6F', color: '#21af5cff' },
+    { name: 'Spark', iconUrl: 'https://api.iconify.design/mdi:flash.svg?color=%23F7A41D', color: '#F7A41D' },
+    { name: 'ActiveJDBC', iconUrl: 'https://api.iconify.design/mdi:database-sync-outline.svg?color=%234A7C6F', color: '#4A7C6F' }
   ] },
   { name: 'Bases de datos', items: [
     { name: 'PostgreSQL', slug: 'postgresql', color: '#4169E1' },
@@ -75,24 +87,35 @@ const getStackItem = (name: string) => {
 ---
 <Layout title="Luka Chaves Felici — Portfolio">
   <div class="wrap">
-    <header class="hero">
-      <p class="eyebrow">&gt; estudiante de ciencias de la computación</p>
-      <h1>Luka Chaves Felici</h1>
-      <p>Estudiante avanzado de Analista en Ciencias de la Computación en la Universidad Nacional de Rio Cuarto (UNRC). Formación sólida en Programación Orientada a Objetos con Java, diseño y normalización de bases de datos relacionales (SQL) y control de versiones con Git/GitHub. Experiencia en desarrollo en equipo aplicando Scrum y GitFlow. Busco incorporarme como desarrollador para aportar mis conocimientos y habilidades en software.
-      </p>
-      <nav class="links">
-        <button type="button" id="mail-link" class="mail-btn">email</button>
-        <a href="https://github.com/lukacha3" target="_blank">github</a>
-        <a href="https://www.linkedin.com/in/luka-chaves-felici/" target="_blank">linkedin</a>
-      </nav>
-    </header>
+    <div class="hero-about-wrapper">
+      <header class="hero">
+        <p class="eyebrow">&gt; estudiante de ciencias de la computación</p>
+        <h1>Luka Chaves Felici</h1>
+        <p>Estudiante avanzado de Analista en Ciencias de la Computación en la Universidad Nacional de Rio Cuarto (UNRC). Formación sólida en Programación Orientada a Objetos con Java, diseño y normalización de bases de datos relacionales (SQL) y control de versiones con Git/GitHub. Experiencia en desarrollo en equipo aplicando Scrum y GitFlow. Busco incorporarme como desarrollador para aportar mis conocimientos y habilidades en software.
+        </p>
+        <nav class="links">
+          <button type="button" class="mail-btn" onmouseenter="this.querySelector('img').src='https://api.iconify.design/mdi:email-outline.svg?color=%23c9a227'" onmouseleave="this.querySelector('img').src='https://api.iconify.design/mdi:email-outline.svg?color=%23e8e6e1'">
+            <img src="https://api.iconify.design/mdi:email-outline.svg?color=%23e8e6e1" alt="" width="16" height="16" />
+            email
+          </button>
+          <a href="https://github.com/lukacha3" target="_blank" onmouseenter="this.querySelector('img').src='https://api.iconify.design/mdi:github.svg?color=%23c9a227'" onmouseleave="this.querySelector('img').src='https://api.iconify.design/mdi:github.svg?color=%23e8e6e1'">
+            <img src="https://api.iconify.design/mdi:github.svg?color=%23e8e6e1" alt="" width="16" height="16" />
+            github
+          </a>
+          <a href="https://www.linkedin.com/in/luka-chaves-felici/" target="_blank" onmouseenter="this.querySelector('img').src='https://api.iconify.design/mdi:linkedin.svg?color=%23c9a227'" onmouseleave="this.querySelector('img').src='https://api.iconify.design/mdi:linkedin.svg?color=%23e8e6e1'">
+            <img src="https://api.iconify.design/mdi:linkedin.svg?color=%23e8e6e1" alt="" width="16" height="16" />
+            linkedin
+          </a>
+        </nav>
+      </header>
 
-    <section class="block about">
-      <h2>Sobre mí</h2>
-      <p>Soy un estudiante que apunta al perfil de Full-Stack developer. Me apasiona la tecnología en todas sus formas: además del desarrollo, dedico buena parte de mi tiempo libre a explorar sistemas operativos, especialmente Linux, y a automatizar tareas con scripts de bash. Me gusta meterme a fondo en la administración de sistemas y también en el hardware — entender cómo funciona algo desde la base es parte de lo que más disfruto de esto.</p>
+      <section class="block about">
+        <h2>Sobre mí</h2>
+        <p>Soy un estudiante que apunta al perfil de Full-Stack developer. Me apasiona la tecnología en todas sus formas: además del desarrollo, dedico buena parte de mi tiempo libre a explorar sistemas operativos, especialmente Linux, y a automatizar tareas con scripts de bash. Me gusta meterme a fondo en la administración de sistemas y también en el hardware, entender cómo funciona algo desde la base es parte de lo que más disfruto de esto.</p>
 
-      <p>Soy detallista y proactivo: no me conformo con la primera solución que funciona, sino que busco pensar de forma iterativa y algorítmica hasta encontrar el mejor enfoque. Me capacito constantemente con cursos y nuevas tecnologías, porque siento que en este campo nunca se termina de aprender.</p>
-    </section>
+        <p>Soy detallista y proactivo: no me conformo con la primera solución que funciona, sino que busco pensar de forma iterativa y algorítmica hasta encontrar el mejor enfoque. Me capacito constantemente con cursos y nuevas tecnologías, porque siento que en este campo nunca se termina de aprender.</p>
+      </section>
+    </div>
 
     <section class="block stack-section">
       <h2>Stack</h2>
@@ -135,10 +158,20 @@ const getStackItem = (name: string) => {
       <h2>Proyectos</h2>
       {proyectos.map((p) => (
         <article class="project">
-          <div class="year">{p.year}</div>
+          <div class="year">
+            {p.year}
+            {p.gallery && p.gallery.length > 0 && (
+              <div class="gallery-thumb" data-gallery={JSON.stringify(p.gallery)}>
+                <img src={p.gallery[0]} alt={`Galería de ${p.title}`} loading="lazy" />
+                <div class="gallery-overlay">
+                  <span>+{p.gallery.length}</span>
+                </div>
+              </div>
+            )}
+          </div>
           <div>
             <h3>{p.title}</h3>
-            <p>{p.desc}</p>
+            {p.desc.split('\n').map((line) => line.trim() ? <p>{line.trim()}</p> : null)}
             <div class="tags">
               {p.tags.map((t) => {
                 const item = getStackItem(t);
@@ -176,9 +209,38 @@ const getStackItem = (name: string) => {
 
     <footer>
       <p>hecho por Luka Chaves Felici — {new Date().getFullYear()}</p>
+      <nav class="links footer-links">
+        <button type="button" class="mail-btn" onmouseenter="this.querySelector('img').src='https://api.iconify.design/mdi:email-outline.svg?color=%23c9a227'" onmouseleave="this.querySelector('img').src='https://api.iconify.design/mdi:email-outline.svg?color=%23e8e6e1'">
+          <img src="https://api.iconify.design/mdi:email-outline.svg?color=%23e8e6e1" alt="" width="16" height="16" />
+          email
+        </button>
+        <a href="https://github.com/lukacha3" target="_blank" onmouseenter="this.querySelector('img').src='https://api.iconify.design/mdi:github.svg?color=%23c9a227'" onmouseleave="this.querySelector('img').src='https://api.iconify.design/mdi:github.svg?color=%23e8e6e1'">
+          <img src="https://api.iconify.design/mdi:github.svg?color=%23e8e6e1" alt="" width="16" height="16" />
+          github
+        </a>
+        <a href="https://www.linkedin.com/in/luka-chaves-felici/" target="_blank" onmouseenter="this.querySelector('img').src='https://api.iconify.design/mdi:linkedin.svg?color=%23c9a227'" onmouseleave="this.querySelector('img').src='https://api.iconify.design/mdi:linkedin.svg?color=%23e8e6e1'">
+          <img src="https://api.iconify.design/mdi:linkedin.svg?color=%23e8e6e1" alt="" width="16" height="16" />
+          linkedin
+        </a>
+      </nav>
     </footer>
   </div>
   <div id="toast" class="toast" role="status" aria-live="polite">correo copiado al portapapeles</div>
+
+  <div id="lightbox" class="lightbox" aria-modal="true" role="dialog" hidden>
+    <div class="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+      <div class="lightbox-header">
+        <span id="lightbox-counter"></span>
+        <button id="lightbox-close" aria-label="Cerrar galería">&times;</button>
+      </div>
+      <div class="lightbox-body">
+        <button id="lightbox-prev" aria-label="Anterior">&#10094;</button>
+        <img id="lightbox-img" src="" alt="Imagen ampliada" />
+        <button id="lightbox-next" aria-label="Siguiente">&#10095;</button>
+      </div>
+    </div>
+  </div>
 </Layout>
 
 <script>
@@ -186,23 +248,171 @@ const getStackItem = (name: string) => {
   const domain = 'gmail.com';
   const email = `${user}@${domain}`;
 
-  const mailBtn = document.getElementById('mail-link');
+  const mailBtns = document.querySelectorAll('.mail-btn');
   const toast = document.getElementById('toast');
   let hideTimeout;
 
-  mailBtn?.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(email);
-    } catch {
-      const temp = document.createElement('textarea');
-      temp.value = email;
-      document.body.appendChild(temp);
-      temp.select();
-      document.execCommand('copy');
-      document.body.removeChild(temp);
+  mailBtns.forEach(btn => {
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(email);
+      } catch {
+        const temp = document.createElement('textarea');
+        temp.value = email;
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand('copy');
+        document.body.removeChild(temp);
+      }
+      toast?.classList.add('show');
+      clearTimeout(hideTimeout);
+      hideTimeout = setTimeout(() => toast?.classList.remove('show'), 2200);
+    });
+  });
+
+  // LIGHTBOX LOGIC
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+  const lightboxCounter = document.getElementById('lightbox-counter');
+  const btnClose = document.getElementById('lightbox-close');
+  const btnPrev = document.getElementById('lightbox-prev');
+  const btnNext = document.getElementById('lightbox-next');
+  
+  let currentGallery: string[] = [];
+  let currentIndex = 0;
+
+  function updateLightbox() {
+    if (currentGallery.length === 0 || !lightboxImg) return;
+    lightboxImg.src = currentGallery[currentIndex];
+    if (lightboxCounter) {
+      lightboxCounter.textContent = `${currentIndex + 1} / ${currentGallery.length}`;
     }
-    toast?.classList.add('show');
-    clearTimeout(hideTimeout);
-    hideTimeout = setTimeout(() => toast?.classList.remove('show'), 2200);
+  }
+
+  // ZOOM LOGIC
+  let isZoomed = false;
+  let isDragging = false;
+  let didDrag = false;
+  let startX = 0, startY = 0;
+  let translateX = 0, translateY = 0;
+
+  function resetZoom() {
+    isZoomed = false;
+    translateX = 0;
+    translateY = 0;
+    if (lightboxImg) {
+      lightboxImg.style.transition = 'transform 0.2s ease';
+      lightboxImg.style.transform = 'translate(0px, 0px) scale(1)';
+      lightboxImg.style.cursor = 'zoom-in';
+    }
+  }
+
+  lightboxImg.addEventListener('mousedown', (e) => {
+    if (isZoomed) {
+      isDragging = true;
+      didDrag = false;
+      startX = e.clientX - translateX;
+      startY = e.clientY - translateY;
+      lightboxImg.style.cursor = 'grabbing';
+      lightboxImg.style.transition = 'none';
+      e.preventDefault();
+    }
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+      didDrag = true;
+      translateX = e.clientX - startX;
+      translateY = e.clientY - startY;
+      lightboxImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(1.8)`;
+    }
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (isDragging) {
+      isDragging = false;
+      lightboxImg.style.cursor = 'grab';
+      lightboxImg.style.transition = 'transform 0.2s ease';
+    }
+  });
+
+  lightboxImg.addEventListener('click', (e) => {
+    if (didDrag) {
+      didDrag = false;
+      return;
+    }
+    if (!isZoomed) {
+      isZoomed = true;
+      lightboxImg.style.cursor = 'grab';
+      lightboxImg.style.transform = `translate(0px, 0px) scale(1.8)`;
+    } else {
+      resetZoom();
+    }
+  });
+
+  function showLightbox(gallery: string[], startIndex: number) {
+    currentGallery = gallery;
+    currentIndex = startIndex;
+    resetZoom();
+    updateLightbox();
+    if (lightbox) lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    if (lightbox) lightbox.hidden = true;
+    document.body.style.overflow = '';
+    currentGallery = [];
+    resetZoom();
+  }
+
+  function nextImage() {
+    if (currentGallery.length > 0) {
+      currentIndex = (currentIndex + 1) % currentGallery.length;
+      resetZoom();
+      updateLightbox();
+    }
+  }
+
+  function prevImage() {
+    if (currentGallery.length > 0) {
+      currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+      resetZoom();
+      updateLightbox();
+    }
+  }
+
+  document.querySelectorAll('.gallery-thumb').forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      const galleryData = thumb.getAttribute('data-gallery');
+      if (galleryData) {
+        try {
+          const gallery = JSON.parse(galleryData);
+          if (gallery.length > 0) {
+            showLightbox(gallery, 0);
+          }
+        } catch (e) {
+          console.error("Invalid gallery data", e);
+        }
+      }
+    });
+  });
+
+  btnClose?.addEventListener('click', closeLightbox);
+  btnNext?.addEventListener('click', nextImage);
+  btnPrev?.addEventListener('click', prevImage);
+
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target && (e.target as HTMLElement).classList.contains('lightbox-backdrop')) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (lightbox && !lightbox.hidden) {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+    }
   });
 </script>
